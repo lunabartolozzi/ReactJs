@@ -30,3 +30,7 @@
 .navbar-item:hover{
    font-size: 1.2rem;
 }
+
+.footer {
+    background-color: palevioletred;
+}
