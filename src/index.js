@@ -6,5 +6,6 @@ import "./estilo.css";
 import App from "./App";
 
 
-ReactDOM.render(<Navbar></Navbar>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
+ 

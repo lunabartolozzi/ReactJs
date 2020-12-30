@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
+import Navbar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
-import Header from "./Header";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
 
 const App = () => {
-  return(
+  return (
     <>
-      <NavBar/>
-      <Main/>
-      <Footer/>
+      <Navbar  />
+      <ItemListContainer greeting="Este es mi primer producto"  />
     </>
   );
 };
