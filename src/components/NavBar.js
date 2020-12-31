@@ -13,12 +13,11 @@ function Navbar() {
     <>
       <header href="Footer.js" className="navbar">
         <a href="Footer.js" className="navbar-logo">Store</a>
-     
         <a href="Footer.js" className="navbar-item">Inicio</a>
         <a href="Footer.js" className="navbar-item">Tienda</a>
-        <Dropdown  isOpen={dropdown} toggle={abrirCerrarDropdown}>
-          <DropdownToggle className="style-dropdown" caret>
-            Productos
+        <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
+          <DropdownToggle caret className="style-dropdown" >
+          <a className="style-producto" href="#">Productos</a>  
           </DropdownToggle>
           <DropdownMenu>
           <DropdownItem> 

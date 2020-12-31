@@ -1,7 +1,8 @@
 .navbar {
     display: flex;
     align-items: center;
-    height: 3rem;
+    height: 4rem;
+    font-size: 1.3rem;
     background: lightblue;
     color: white;
     font-weight: 500;
@@ -10,11 +11,11 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 .navbar-logo {
     margin-right: auto;
-    font-size: 1.7rem;
+   
     padding-left:  16px;
      text-decoration: none;
     color: white;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
 }
 .navbar-logo:hover{
     text-decoration: none;
@@ -28,7 +29,8 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
     text-decoration: none;
     color: white;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.2rem;
+  
 }
 
 .navbar-item:hover{
@@ -37,26 +39,6 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    
 }
 
-.footer {
-    background-color: palevioletred;
-}
-
-.carrito{
-    width: 1.8rem;
-    height: 1.8rem;
-    margin-right: 5px;
-    margin-bottom: 1.8rem;
-}
-
-.text{
-    
-    border-radius: 20px;
-    border: lightblue solid 2px;
-    width: 200px;
-    padding: 2rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-}
 
 .option-dropdown{
     text-decoration: none;
@@ -73,5 +55,48 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    margin-bottom: 1.5rem;
+}
+
+.style-producto{
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: white;
+    padding-top: 0.2rem;
+}
+
+
+.style-producto:hover{
+    text-decoration: none;
+    color: white;
+     }
+.carrito{
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 5px;
+    margin-bottom: 1.2rem;
+}
+
+.text{
+    
+    border-radius: 20px;
+    border: lightblue solid 2px;
+    width: 200px;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+
+
+/* -------------------CartWidget----------------- */
+
+.card{
+    width: 16rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.card-img-top{
+    width: 12rem;
+    height: 14rem;
 }
