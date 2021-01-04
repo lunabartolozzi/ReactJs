@@ -91,12 +91,74 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 /* -------------------CartWidget----------------- */
 
 .card{
-    width: 16rem;
+    width: 20rem;
     margin-top: 2rem;
     margin-left: 2rem;
 }
 
 .card-img-top{
-    width: 12rem;
-    height: 14rem;
+    width: 20rem;
+    height: 16rem;
+}
+
+
+
+/* ---------------contador------------ */
+
+.style-contador{
+    border: solid 0.2rem lightblue;
+    border-radius: 0.2rem;
+     width: 12rem;
+    height: 2rem;
+    margin-left: 3rem;
+   
+}
+
+.button-contador1{
+    background-color: lightblue;
+    border: solid white;
+    border-radius: 0.2rem;
+    margin-right: 2rem;
+    width: 3rem;
+    height: 2rem;
+ 
+}
+.button-contador2{
+    background-color: lightblue;
+    border: solid white;
+    border-radius: 0.2rem;
+    width: 3rem;
+    height: 2rem;
+    margin-left: 2rem;
+}
+
+
+.text-contador{
+   color: black;
+display: contents;
+margin-block-start: 0px;
+margin-block-end: 0px;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+
+}
+
+.container-contador{
+    width: 18rem;
+    height: 12rem;
+    border-radius: 0.5rem;
+    background-color: lightblue;
+    text-align: center;
+    border: white solid;
+    margin-top: 3rem;
+
+}
+
+.agregar-carrito{
+    background-color: lightblue;
+    border: solid white;
+    border-radius: 0.2rem;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 3rem;
 }
