@@ -24,20 +24,23 @@ function ItemCount({ stock, initial, onAdd }) {
   
     }
     return (
-        <>
-           <section className="container-contador">
-                <p>Agenda 2021</p>
-                <div className="style-contador">
-                <button onClick={restarContador} className="button-contador1">-</button>
-                    <p className="text-contador"> 
-                {contador}
-                </p>
-                <button onClick={aumentarContador}  className="button-contador2" >+</button>  
-                </div>
-                <button className="agregar-carrito" onClick={clickAdd}>Agregar Carrito</button>
-            </section>
-        </>
-        
+      <>
+            <section className="container-contador">
+                <p>Unidades </p>
+          <div className="style-contador">
+            <button onClick={restarContador} className="button-contador1">
+              -
+            </button>
+            <p className="text-contador">{contador}</p>
+            <button onClick={aumentarContador} className="button-contador2">
+              +
+            </button>
+          </div>
+          <button className="agregar-carrito" onClick={clickAdd}>
+            Agregar Carrito
+          </button>
+        </section>
+      </>
     );
 };
 

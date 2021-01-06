@@ -3,7 +3,7 @@
     align-items: center;
     height: 4rem;
     font-size: 1.3rem;
-    background: #add8e6;
+    background: lightblue;
     color: white;
     font-weight: 500;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
@@ -47,7 +47,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
 .option-dropdown:hover{
-    color: lightblue;
+    color: #add8e6;
     text-decoration: none;
     
 }
@@ -108,10 +108,10 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 .style-btn{
     width: 7rem;
     height: 2rem;
-    background-color: #c8f4ff;
-    border: solid #c8f4ff;
+    background-color: #def2fc;
+    border: solid white;
     border-radius: 0.2rem;
-}
+}/* #FFDAB9 */
 
 .grid-list{
     display: grid;
@@ -120,17 +120,9 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 /* ---------------contador------------ */
 
-.style-contador{
-    border: solid 0.2rem lightblue;
-    border-radius: 0.2rem;
-     width: 12rem;
-    height: 2rem;
-    margin-left: 3rem;
-   
-}
 
 .button-contador1{
-    background-color: lightblue;
+    background-color: #def2fc;
     border: solid white;
     border-radius: 0.2rem;
     margin-right: 2rem;
@@ -139,7 +131,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  
 }
 .button-contador2{
-    background-color: lightblue;
+    background-color: #def2fc;
     border: solid white;
     border-radius: 0.2rem;
     width: 3rem;
@@ -172,7 +164,7 @@ margin-inline-end: 0px;
 }
 
 .agregar-carrito{
-    background-color: lightblue;
+    background-color: #def2fc;
     border: solid white;
     border-radius: 0.2rem;
     width: 15rem;
