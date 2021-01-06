@@ -17,7 +17,7 @@ function Navbar() {
         <a href="Footer.js" className="navbar-item">Tienda</a>
         <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown}>
           <DropdownToggle caret className="style-dropdown" >
-          <a className="style-producto" href="#">Productos</a>  
+          <a className="style-productos" href="#">Productos</a>  
           </DropdownToggle>
           <DropdownMenu>
           <DropdownItem> 

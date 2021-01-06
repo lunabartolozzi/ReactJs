@@ -3,7 +3,7 @@
     align-items: center;
     height: 4rem;
     font-size: 1.3rem;
-    background: lightblue;
+    background: #add8e6;
     color: white;
     font-weight: 500;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
@@ -11,12 +11,13 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 .navbar-logo {
     margin-right: auto;
-   
     padding-left:  16px;
      text-decoration: none;
     color: white;
     padding-bottom: 1.2rem;
+    font-size: 2rem;
 }
+
 .navbar-logo:hover{
     text-decoration: none;
     color: white;
@@ -29,7 +30,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
     text-decoration: none;
     color: white;
-    padding-bottom: 0.2rem;
+    padding-bottom: 1rem;
   
 }
 
@@ -55,17 +56,21 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
+   
+
 }
 
-.style-producto{
+.style-productos{
     font-size: 1.3rem;
     text-decoration: none;
     color: white;
-    padding-top: 0.2rem;
+
+}
+.dropdown-toggle {
+    padding-bottom: 1.5rem !important;
 }
 
-
-.style-producto:hover{
+.style-productos:hover{
     text-decoration: none;
     color: white;
      }
@@ -94,15 +99,25 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 20rem;
     margin-top: 2rem;
     margin-left: 2rem;
-}
-
-.card-img-top{
-    width: 20rem;
-    height: 16rem;
+  
+   
 }
 
 
 
+.style-btn{
+    width: 7rem;
+    height: 2rem;
+    background-color: #c8f4ff;
+    border: solid #c8f4ff;
+    border-radius: 0.2rem;
+}
+
+.grid-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
 /* ---------------contador------------ */
 
 .style-contador{
@@ -150,7 +165,9 @@ margin-inline-end: 0px;
     background-color: lightblue;
     text-align: center;
     border: white solid;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
 
 }
 
@@ -162,3 +179,25 @@ margin-inline-end: 0px;
     height: 2rem;
     margin-top: 3rem;
 }
+
+
+/* --------------------FOOTER------------------- */
+.style-footer{
+    background-color:lightblue;
+    width: 100%;
+    height: 8rem;
+}
+
+.style-list{
+    list-style:none
+}
+.links-footer{
+    text-decoration: none;
+    color: white;
+    margin-left: 2rem;
+}
+
+.links-footer:hover{
+    text-decoration: none;
+    color: white;
+    }
