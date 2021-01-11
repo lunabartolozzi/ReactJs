@@ -1,9 +1,10 @@
 /* Item descriptivo del producto */
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
+import { Link } from 'react-router-dom';
 
 const Item = ({ item }) => {
-  const { id, title, description, price, pictureUrl } = item;
+  const { id, title, info, price, pictureUrl } = item;
 
   return (
     <>
@@ -12,9 +13,11 @@ const Item = ({ item }) => {
         <div className="card-body">
           <p className="card-text">{id}</p>
           <h5 className="card-title">{title}</h5>
-          <p className="card-text">{description}</p>
+          <p className="card-text">{info}</p>
           <p className="card-text">{price}</p>
-          <button className="style-btn">Ver detalle</button>
+          <button className="style-btn">
+            <Link to={"/item/" + id} > Ver detalles </Link>
+          </button>
         </div>
       </div>
     </>

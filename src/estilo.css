@@ -93,17 +93,24 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 
 
-/* -------------------CartWidget----------------- */
+/* -------------------item----------------- */
 
 .card{
-    width: 20rem;
+    width: 12rem;
+    height: 12rem;
     margin-top: 2rem;
     margin-left: 2rem;
-  
-   
+ 
 }
-
-
+.card-title{
+    font-size: 1.2rem;
+}
+.card-text{
+    font-size: 1rem;
+}
+.card-img-top{
+    width: 10rem;
+}
 
 .style-btn{
     width: 7rem;
@@ -115,14 +122,20 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 .grid-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+    grid-template-columns: repeat(6, 1fr);
+ row-gap: 1/5;
+
+ grid-row-gap: 17rem;
+  
 }
 /* ---------------contador------------ */
 
-
+.contador{
+    display: flow-root;
+ 
+}
 .button-contador1{
-    background-color: #def2fc;
+    background-color: lightblue;
     border: solid white;
     border-radius: 0.2rem;
     margin-right: 2rem;
@@ -131,7 +144,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  
 }
 .button-contador2{
-    background-color: #def2fc;
+    background-color: lightblue;
     border: solid white;
     border-radius: 0.2rem;
     width: 3rem;
@@ -150,26 +163,13 @@ margin-inline-end: 0px;
 
 }
 
-.container-contador{
-    width: 18rem;
-    height: 12rem;
-    border-radius: 0.5rem;
-    background-color: lightblue;
-    text-align: center;
-    border: white solid;
-    margin-top: 2rem;
-    margin-left: 3rem;
-    margin-bottom: 2rem;
-
-}
-
 .agregar-carrito{
-    background-color: #def2fc;
+    background-color: lightblue;
     border: solid white;
     border-radius: 0.2rem;
-    width: 15rem;
+    width: 10.8rem;
     height: 2rem;
-    margin-top: 3rem;
+
 }
 
 
@@ -192,4 +192,45 @@ margin-inline-end: 0px;
 .links-footer:hover{
     text-decoration: none;
     color: white;
-    }
+}
+
+
+/* ------------Item detail----------------- */
+.body-itemdetail{
+    width: 100%;
+    height:50rem;
+    
+    font-size: 1rem;
+
+}
+.text-detail {
+    width: 55rem;
+}
+
+
+.img-detail{
+    width: 20rem;
+    height: 20rem;
+ 
+}
+
+.info-detail{
+    position: relative;
+}
+
+
+/* -------item list container--------- */
+.style-h2{
+    font-size: 2rem;
+    color: lightblue;
+
+}
+.item-list{
+    width: 50rem;
+    height: 100rem;
+}
+
+
+
+
+

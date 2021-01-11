@@ -25,8 +25,7 @@ function ItemCount({ stock, initial, onAdd }) {
     }
     return (
       <>
-            <section className="container-contador">
-                <p>Unidades </p>
+        <div className="contador">
           <div className="style-contador">
             <button onClick={restarContador} className="button-contador1">
               -
@@ -39,7 +38,7 @@ function ItemCount({ stock, initial, onAdd }) {
           <button className="agregar-carrito" onClick={clickAdd}>
             Agregar Carrito
           </button>
-        </section>
+        </div>
       </>
     );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-import { InfoProductos } from "./InfoProductos";
+import { infoproductos } from "./InfoProductos";
 
 const ItemList = () => {
   const [info, setInfo] = useState([]);
@@ -11,7 +11,7 @@ const ItemList = () => {
 
   const obtenerInfo = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(InfoProductos);
+      resolve(infoproductos);
     }, 2000);
   });
   return (
@@ -19,7 +19,7 @@ const ItemList = () => {
       {info.map((elemento) => (
         <Item item={elemento}  />
       ))}
-      ;
+      
     </div>
   );
 };
