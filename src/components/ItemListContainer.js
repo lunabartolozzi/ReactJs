@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Agenda from './agenda2021.jpg';
-import Item from "./Item";
-import ItemCount from "./ItemCount";
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
@@ -12,8 +9,8 @@ function ItemListContainer({ infoproductos }) {
 
   useEffect(() => {
       if(id){
-          const category = infoproductos.filter(info => info.categoryId == id)
-          setItems(category)
+          const categoryProducts = infoproductos.filter(info => info.categoryId == id)
+          setItems(categoryProducts)
       }
       else{
           setItems(infoproductos)
@@ -22,13 +19,13 @@ function ItemListContainer({ infoproductos }) {
   }, [id, infoproductos])
 
   return (
-    <>
+   
       <div className="item-list">
-     {infoproductos.length > 1 ? <ItemList infoproductos={items} /> : <h2 className="style-h2">Buscando productos..</h2>}    
-      
+     {items.length > 1 ? <ItemList infoproductos={items} /> : <h2 className="style-h2">Buscando productos..</h2>}    
+   {/*   { categoryProducts ? <h5>Resultados encontrados para {categoryProducts}... </h5> : <> </> } */}
       </div>
      
-    </>
+   
   );
 };
 

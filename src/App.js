@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { infoproductos} from "./components/InfoProductos";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Inicio from "./components/Inicio";
+import Contacto from "./components/Contacto";
+
 
 
 
@@ -28,10 +31,13 @@ function App() {
 
   return (
     <>
-        <BrowserRouter>
+      <BrowserRouter>
+      
         <Navbar />
+        
         <Switch>
           <Route exact path="/">
+          <Inicio />
             <ItemListContainer infoproductos={items} />
           </Route>
           <Route exact path="/category/:id">
@@ -39,11 +45,13 @@ function App() {
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer />
-          </Route>
+          </Route> 
       </Switch>
       </BrowserRouter>
+      <Contacto/>
       <Footer />
-       
+     
+     
     </>
   );
 }

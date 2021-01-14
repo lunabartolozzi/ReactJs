@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 function ItemDetail({
   title,
   price,
@@ -19,12 +20,13 @@ function ItemDetail({
   };
 
   return (
+   
     <>
       <div className="body-itemdetail">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="#">Inicio</a>
+              <a href="/">Inicio</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               {categoryId}
@@ -34,7 +36,6 @@ function ItemDetail({
             </li>
           </ol>
         </nav>
-
         <div className="info-detail">
           <img src={pictureUrl} className="img-detail rounded float-left" />
           <h1> {title} </h1>
