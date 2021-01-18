@@ -3,24 +3,21 @@ import ItemCount from "./ItemCount";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-function ItemDetail({
-  title,
-  price,
-  pictureUrl,
-  description,
-  categoryId,
-}) {
-  const [cantidadSeleccionada, setcantidadSeleccionada] = useState(0);
-  const [stock, setStock] = useState(20);
-  const agregarCarrito = (cantidad) => {
-    if (stock >= cantidad) {
-      setcantidadSeleccionada(cantidadSeleccionada + cantidad);
-      setStock(stock - cantidad);
+function ItemDetail({item, setCarrito, carrito}) {
+  const [stock, setStock] = useState(10);
+  const [sumado, setSumado] = useState(false);
+  const sumarAlCarrito = (cantidadSeleccionada) => {
+    if (stock >= cantidadSeleccionada) {
+      setCarrito(...carrito, {
+        ...item,
+        cantidadSeleccionada: cantidadSeleccionada,
+      });
+      setStock(stock - cantidadSeleccionada)
+      setSumado(true);
     }
   };
-
+  const { title, price, pictureUrl, description, categoryId } = item;
   return (
-   
     <>
       <div className="body-itemdetail">
         <nav aria-label="breadcrumb">
@@ -41,8 +38,17 @@ function ItemDetail({
           <h1> {title} </h1>
           <p className="price-detail"> {price} </p>
           <p className=" text-detail text-lg-left">{description}</p>
-          <ItemCount stock={stock} initial="0" onAdd={agregarCarrito} />
-        </div>
+          {sumado ? (
+            <div>
+              <a href="/cart" className="btn btn-primary"> Finalizar compra</a>
+            </div> 
+          ) : (
+              <div className="precio">
+                 <ItemCount stock={stock} initial="0" onAdd={sumarAlCarrito} />
+     
+               </div>
+            )}
+ </div>
       </div>
     </>
   );

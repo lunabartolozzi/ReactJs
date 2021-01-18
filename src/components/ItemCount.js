@@ -12,10 +12,10 @@ function ItemCount({ stock, initial, onAdd }) {
             setContador(contador + 1)
         }
     }
-    const clickAdd = () => {
+     const clickAdd = () => {
         onAdd(contador);
-        setContador(parseInt(initial))
-        console.log('Producto añadido al carrito')
+       setContador(parseInt(initial));
+       
     };
     const restarContador = () => {
         if (contador > parseInt(initial)) {
