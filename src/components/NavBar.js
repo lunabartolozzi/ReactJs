@@ -1,10 +1,7 @@
 import React, {useState} from "react";
-import { a } from "react-router-dom";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import CartWidget from "./CartWidget";
-import { infoproductos } from "./InfoProductos";
-import ItemListContainer from "./ItemListContainer";
-import Tienda from "./Tienda";
+
 
 
 
