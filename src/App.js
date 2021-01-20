@@ -1,13 +1,16 @@
-import Navbar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
+import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/NavBar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { infoproductos} from "./components/InfoProductos";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Inicio from "./components/Inicio";
 import Contacto from "./components/Contacto";
+import CartProvider  from './components/CartContext';
+import Cart from './components/Cart'
+
 
 function App() {
   
@@ -26,6 +29,7 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   return (
     <>
+      <CartProvider>
       <BrowserRouter>
       
         <Navbar/>
@@ -40,12 +44,15 @@ function App() {
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer setCarrito={setCarrito} carrito={carrito} />
-          </Route> 
+            </Route> 
+            <Route exact path="/cart">
+              <Cart/>
+            </Route>
       </Switch>
       </BrowserRouter>
       <Contacto/>
       <Footer />
-     
+      </CartProvider>
      
     </>
   );
