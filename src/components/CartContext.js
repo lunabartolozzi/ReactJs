@@ -10,7 +10,7 @@ function CartProvider({ children }) {
   useEffect(() => {
     var totalCosto = 0;
 
-    const totalesProducto = carrito.map((item) => item.price * item.cantidad);
+    const totalesProducto = carrito.map((item) => item.price * item.cantidadSeleccionada);
 
     totalesProducto.map((precioItem) => (totalCosto = totalCosto + precioItem));
 
@@ -29,8 +29,8 @@ function CartProvider({ children }) {
       const carritoFiltrado = carrito.filter(
         (producto) => producto.id !== productoAAgregar.id
       );
-      itemEnCarrito.cantidad =
-        itemEnCarrito.cantidad + productoAAgregar.cantidad;
+      itemEnCarrito.cantidadSeleccionada =
+        itemEnCarrito.cantidadSeleccionada + productoAAgregar.cantidadSeleccionada;
 
       setCarrito([...carritoFiltrado, itemEnCarrito]);
     } else {
@@ -66,4 +66,3 @@ function CartProvider({ children }) {
 }
 
 export default CartProvider;
-

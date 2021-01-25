@@ -1,6 +1,5 @@
 /* Item descriptivo del producto */
-import React, { useState } from "react";
-import ItemCount from "./ItemCount";
+import React from "react";
 import { Link } from 'react-router-dom';
 
 const Item = ({ item }) => {
