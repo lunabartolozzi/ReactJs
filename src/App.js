@@ -48,10 +48,13 @@ function App() {
             <Route exact path="/cart">
               <Cart/>
             </Route>
-      </Switch>
+           
+          </Switch>
+          <Contacto/>
+          <Footer />
       </BrowserRouter>
-      <Contacto/>
-      <Footer />
+     
+     
       </CartProvider>
      
     </>

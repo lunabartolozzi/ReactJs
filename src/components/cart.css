@@ -1,0 +1,25 @@
+.category-1{
+    width: 50%;
+}
+.category-2{
+    width: 10%;
+}
+.category-3{
+    width: 8%;
+}
+.category-4{
+    width: 22%;
+}
+.category-5{
+    width: 10%;
+}
+
+
+.btn-success {
+    background-color: rgb(166, 209, 223) !important;
+    border: white !important ;
+ }
+ .btn-warning {
+    background-color: rgb(166, 209, 223) !important;
+    border: white !important ;
+ }

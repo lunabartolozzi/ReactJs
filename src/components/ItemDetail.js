@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 
-function ItemDetail({item, setCarrito, carrito}) {
+function ItemDetail({ item}) {
+  const { addItem } = useContext(CartContext);
   const [stock, setStock] = useState(10);
   const [sumado, setSumado] = useState(false);
   const sumarAlCarrito = (cantidadSeleccionada) => {
     if (stock >= cantidadSeleccionada) {
-      setCarrito(...carrito, {
+      addItem( {
         ...item,
         cantidadSeleccionada: cantidadSeleccionada,
       });
@@ -17,13 +20,14 @@ function ItemDetail({item, setCarrito, carrito}) {
     }
   };
   const { title, price, pictureUrl, description, categoryId } = item;
+
   return (
     <>
       <div className="body-itemdetail">
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="/">Inicio</a>
+            <Link to="/">Inicio</Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               {categoryId}
@@ -40,7 +44,7 @@ function ItemDetail({item, setCarrito, carrito}) {
           <p className=" text-detail text-lg-left">{description}</p>
           {sumado ? (
             <div>
-              <a href="/cart" className="btn btn-primary"> Finalizar compra</a>
+             <Link to="/cart" className="btn btn-primary"> Finalizar compra</Link>
             </div> 
           ) : (
               <div className="precio">

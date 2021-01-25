@@ -5,7 +5,7 @@ export const infoproductos = [
         info: "Agenda 2020 Moove, 160 hojas, 100 stickers",
         price: "$900",
         pictureUrl: "https://i.imgur.com/hakVwzv.jpg",
-        description: 'Agenda de planeamiento semanal (semana a la vista) 15x21 cm &nbsp Tapas duras engomadas en colores pastel con número calado y cierre elástico. Hojas de extrablanco de 70 gramos y Anillada con doble espiral metálico muy resistente Cada mes esta diferenciado en una tonalidad pastel diferente Total de páginas 144Además-Datos personales y claves -Tips para optimizar uso-Calendario 2021 y 2022 -Cuadro de Gastos            -Planner Anual -Hojas de uso libre en Bullet Journal -Indice de contactos-Doble sobre de papel para documentación',
+        description: 'Agenda de planeamiento semanal (semana a la vista) 15x21 cm           Tapas duras engomadas en colores pastel con número calado y cierre elástico. Hojas de extrablanco de 70 gramos y Anillada con doble espiral metálico muy resistente Cada mes esta diferenciado en una tonalidad pastel diferente Total de páginas 144Además-Datos personales y claves -Tips para optimizar uso-Calendario 2021 y 2022 -Cuadro de Gastos            -Planner Anual -Hojas de uso libre en Bullet Journal -Indice de contactos-Doble sobre de papel para documentación',
         categoryId: "Agendas",
         stock: 10,
         initial: 3,

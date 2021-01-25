@@ -1,15 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Carrito from './carrito.svg';
 
 
 
-const CartWidget = () => {
+const CartWidget = ({cantidad}) => {
     return (
         <div>
            
                    
-            <a href="/"> <img className="carrito" src={Carrito}
-                    alt="carrito" /></a>
+            <Link to="/"> <img className="carrito" src={Carrito}
+                    alt="carrito" />  {cantidad} </Link>
                 
       </div>
     )
