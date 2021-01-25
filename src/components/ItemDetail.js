@@ -40,7 +40,7 @@ function ItemDetail({ item}) {
         <div className="info-detail">
           <img src={pictureUrl} className="img-detail rounded float-left" />
           <h1> {title} </h1>
-          <p className="price-detail"> {price} </p>
+          <p className="price-detail"> ${price} </p>
           <p className=" text-detail text-lg-left">{description}</p>
           {sumado ? (
             <div>

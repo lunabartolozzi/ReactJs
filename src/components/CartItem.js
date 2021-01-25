@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
-function CartItem({ item }) {
-  const { carrito, total, clear, cantidad } = useContext(CartContext);
 
+function CartItem({ item }) {
+  const {removeItem}= useContext(CartContext)
   return (
     <>
       <link
@@ -47,16 +46,16 @@ function CartItem({ item }) {
                   </div>
                 </div>
               </td>
-              <td data-th="Price"> {item.price} </td>
+              <td data-th="Price">  ${item.price} </td>
               <td data-th="Quantity">{item.cantidadSeleccionada}</td>
               <td data-th="Subtotal" className="text-center">
-                <p>{item.price * item.cantidadSeleccionada}</p>
+                <p>${item.price*item.cantidadSeleccionada}</p>
               </td>
               <td className="actions" data-th="">
                 <button className="btn btn-info btn-sm">
                   <i className="fa fa-refresh"></i>
                 </button>
-                <button className="btn btn-danger btn-sm">
+                <button onclick={removeItem(item)} className="btn btn-danger btn-sm">
                   <i className="fa fa-trash-o"></i>
                 </button>
               </td>
