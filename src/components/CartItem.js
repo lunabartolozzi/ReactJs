@@ -3,7 +3,7 @@ import { CartContext } from "./CartContext";
 
 
 function CartItem({ item }) {
-  const {removeItem}= useContext(CartContext)
+
   return (
     <>
       <link
@@ -55,7 +55,7 @@ function CartItem({ item }) {
                 <button className="btn btn-info btn-sm">
                   <i className="fa fa-refresh"></i>
                 </button>
-                <button onclick={removeItem(item)} className="btn btn-danger btn-sm">
+                <button className="btn btn-danger btn-sm">
                   <i className="fa fa-trash-o"></i>
                 </button>
               </td>
