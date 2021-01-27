@@ -2,31 +2,35 @@ import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
-function ItemListContainer({ infoproductos }) {
-  const [ items, setItems ] = useState([])
+function ItemListContainer({ data }) {
+    const [articulos, setArticulos] = useState([]);
+    const { category } = useParams();
+    useEffect(() => {
+        if (category) {
+            const productosFiltrados = data.filter(
+                (articulo) => articulo.categoryID === category
+            );
+            setArticulos(productosFiltrados);
+        } else {
+            setArticulos(data);
 
-  const { id } = useParams()
-
-  useEffect(() => {
-      if(id){
-          const categoryProducts = infoproductos.filter(info => info.categoryId == id)
-          setItems(categoryProducts)
-      }
-      else{
-          setItems(infoproductos)
-      }
-
-  }, [id, infoproductos])
-
-  return (
-   
+        }
+    }, [category, data])
+    return (
+        <div>
+            {
+                category ? (
+                    <h3>Resultado de busqueda..</h3>
+                ) : (
+                    <> </>    
+                )}
       <div className="item-list">
-     {items.length > 1 ? <ItemList infoproductos={items} /> : <h2 className="style-h2">Buscando productos..</h2>}    
-   {/*   { categoryProducts ? <h5>Resultados encontrados para {categoryProducts}... </h5> : <> </> } */}
+     <ItemList articulos={articulos} /> 
+
       </div>
-     
-   
-  );
+            </div>
+    )
+  
 };
 
 export default ItemListContainer;

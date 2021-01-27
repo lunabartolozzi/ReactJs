@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {Fragment, useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
 import CartWidget from "./CartWidget";
@@ -6,7 +6,7 @@ import{CartContext} from "./CartContext"
 
 
 function Navbar() {
-  const {cantidad} = useContext(CartContext)
+  const {CartQuantity} = useContext(CartContext)
   const [dropdown, setDropdown] = useState(false);
   const abrirCerrarDropdown = () => {
     setDropdown(!dropdown);
@@ -43,8 +43,14 @@ function Navbar() {
           </DropdownMenu>
 </Dropdown>  
 
-       <Link className="navbar-item">Contacto</Link>
-        <CartWidget cantidad={cantidad} />
+        <Link className="navbar-item">Contacto</Link>
+        {CartQuantity() < 1 ? (
+          <Fragment />
+        ):( 
+          <CartWidget cantidad={CartQuantity()} />
+        )
+       }
+      
 </header>   
 </>
   );

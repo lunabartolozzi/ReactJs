@@ -1,62 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { infoproductos} from "./components/InfoProductos";
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Inicio from "./components/Inicio";
 import Contacto from "./components/Contacto";
-import CartProvider  from './components/CartContext';
-import Cart from './components/Cart'
-
+import CartProvider from "./components/CartContext";
+import Cart from "./components/Cart";
+import { firestore } from "./firebaseConfig";
 
 function App() {
-  
-  const [items, setItems] = useState([])
-  useEffect(() => {
-    const promesa = new Promise((resolve, reject)=>{
-      setTimeout(function(){
-        resolve(infoproductos); 
-      }, 2000);
-    }
-    )
-    promesa.then( result => setItems(result)) 
-    promesa.catch( err => console.log("Error!")) 
+  const [productList, setProductList] = useState([]);
 
-  }, []);
-  const [carrito, setCarrito] = useState([]);
+  useEffect(() => {
+    const db = firestore;
+    const collection = db.collection("articulos");
+    const query = collection.get();
+    query
+      .then((result) => {
+        setProductList(result.docs.map((art) => ({ id: art.id, ...art.data() })));
+        console.log(productList);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    console.log(productList);
+  }, [productList]);
+
   return (
     <>
       <CartProvider>
-      <BrowserRouter>
-      
-        <Navbar/>
-        
-        <Switch>
-          <Route exact path="/">
-          <Inicio />
-            <ItemListContainer infoproductos={items} />
-          </Route>
-          <Route exact path="/category/:id">
-            <ItemListContainer infoproductos={items} />
-          </Route>
-          <Route exact path="/item/:id">
-            <ItemDetailContainer setCarrito={setCarrito} carrito={carrito} />
-            </Route> 
-            <Route exact path="/cart">
-              <Cart/>
+        <BrowserRouter>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Inicio />
+              <ItemListContainer data={productList} />
             </Route>
-           
+            <Route exact path="/category/:id">
+              <ItemListContainer data={productList} />
+            </Route>
+            <Route exact path="/item/:id">
+              <ItemDetailContainer data={productList} />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
           </Switch>
-          <Contacto/>
+          <Contacto />
           <Footer />
-      </BrowserRouter>
-     
-     
+        </BrowserRouter>
       </CartProvider>
-     
     </>
   );
 }

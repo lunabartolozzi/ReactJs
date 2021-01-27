@@ -1,36 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { infoproductos } from "./InfoProductos";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
 
-const ItemDetailContainer = ({setCarrito, carrito}) => {
+const ItemDetailContainer = ({ data }) => {
   const [detalles, setDetalles] = useState({});
- 
+
   const { id } = useParams();
 
   useEffect(() => {
-    getItems.then((resultado) => {
-      const item = resultado.find((producto) => producto.id === parseInt(id));
-      setDetalles(item);
-    });;
+    const item = data.find((product) => product.id === parseInt(id));
+    setDetalles(item);
   }, [id]);
-  const getItems = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(infoproductos);
 
-    }, 2000);
-  });
   return (
     <div className="itemDetailContainer">
-   
-        <ItemDetail
-          setCarrito={setCarrito}
-          carrito={carrito}
-          item={detalles}
-        />
-    
-  
+      <ItemDetail item={detalles} />
     </div>
   );
 };

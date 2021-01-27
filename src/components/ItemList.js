@@ -2,11 +2,11 @@ import React from "react";
 import Item from "./Item";
 
 
-const ItemList = ({infoproductos}) => {
+const ItemList = ({articulos}) => {
   return (
     <div className="grid-list">
-      {infoproductos.map((elemento) => (
-        <Item item={elemento}  />
+      {articulos.map((articulo) => (
+        <Item key={articulo.id} item={articulo}  />
       ))}
       
     </div>

@@ -1,36 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export const CartContext = React.createContext();
 
 function CartProvider({ children }) {
   const [carrito, setCarrito] = useState([]);
-  const [cantidad, setCantidad] = useState(0);
-  const [total, setTotal] = useState();
 
-  useEffect(() => {
+  function CartPrice() {
     var totalCosto = 0;
 
-    const totalesProducto = carrito.map((item) => item.price * item.cantidadSeleccionada);
+    const totalesProducto = carrito.map((art) => art.item.price * art.item.cantidadSeleccionada ) 
+    
 
     totalesProducto.map((precioItem) => (totalCosto = totalCosto + precioItem));
-
-    setTotal(totalCosto);
-
-    const carritoCantidad = carrito.length;
-
-    setCantidad(carritoCantidad);
-  }, [carrito]);
+    return totalCosto;
+  }
+  function CartQuantity() {
+    return carrito.reduce(
+      (acumulador, item) => acumulador + item.cantidadSeleccionada,
+      0
+    );
+  }
 
   function addItem(productoAAgregar) {
     if (isInCart(productoAAgregar)) {
       const itemEnCarrito = carrito.find(
-        (producto) => producto.id === productoAAgregar.id
+        (articulo) => articulo.item.id === productoAAgregar.articulo.id
       );
       const carritoFiltrado = carrito.filter(
-        (producto) => producto.id !== productoAAgregar.id
+        (articulo) => articulo.item.id !== productoAAgregar.articulo.id
       );
       itemEnCarrito.cantidadSeleccionada =
-        itemEnCarrito.cantidadSeleccionada + productoAAgregar.cantidadSeleccionada;
+        itemEnCarrito.cantidadSeleccionada +
+        productoAAgregar.cantidadSeleccionada;
 
       setCarrito([...carritoFiltrado, itemEnCarrito]);
     } else {
@@ -41,7 +42,7 @@ function CartProvider({ children }) {
   function removeItem(productoARemover) {
     if (isInCart(productoARemover)) {
       const carritoActualizado = carrito.filter(
-        (producto) => producto.id !== productoARemover.id
+        (articulo) => articulo.item.id !== productoARemover.articulo.id
       );
 
       setCarrito(carritoActualizado);
@@ -53,15 +54,19 @@ function CartProvider({ children }) {
   }
 
   function isInCart(productoAValidar) {
-    return carrito.some((producto) => producto.id === productoAValidar.id);
+    return carrito.some(
+      (articulo) => articulo.item.id === productoAValidar.articulo.id
+    );
   }
 
   return (
-    <CartContext.Provider
-      value={{ carrito, cantidad, total, addItem, removeItem, clear }}
-    >
-      {children}
-    </CartContext.Provider>
+    <>
+      <CartContext.Provider
+        value={{ carrito, addItem, removeItem, clear, CartPrice, CartQuantity }}
+      >
+        {children}
+      </CartContext.Provider>
+    </>
   );
 }
 

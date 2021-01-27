@@ -5,21 +5,26 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 
-function ItemDetail({ item}) {
+function ItemDetail({ item }) {
   const { addItem } = useContext(CartContext);
-  const [stock, setStock] = useState(10);
+
+  const [stock, setStock] = useState(5);
+
   const [sumado, setSumado] = useState(false);
+
+  const { title, price, pictureUrl, description, categoryId } = item;
+
   const sumarAlCarrito = (cantidadSeleccionada) => {
     if (stock >= cantidadSeleccionada) {
-      addItem( {
-        ...item,
-        cantidadSeleccionada: cantidadSeleccionada,
+      addItem({
+        item: item,
+        cantidad: cantidadSeleccionada,
       });
-      setStock(stock - cantidadSeleccionada)
+      setStock(stock - cantidadSeleccionada);
       setSumado(true);
     }
   };
-  const { title, price, pictureUrl, description, categoryId } = item;
+
 
   return (
     <>
@@ -27,7 +32,7 @@ function ItemDetail({ item}) {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-            <Link to="/">Inicio</Link>
+              <Link to="/">Inicio</Link>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               {categoryId}
@@ -44,15 +49,17 @@ function ItemDetail({ item}) {
           <p className=" text-detail text-lg-left">{description}</p>
           {sumado ? (
             <div>
-             <Link to="/cart" className="btn btn-primary"> Finalizar compra</Link>
-            </div> 
+              <Link to="/cart" className="btn btn-primary">
+               
+                Finalizar compra
+              </Link>
+            </div>
           ) : (
-              <div className="precio">
-                 <ItemCount stock={stock} initial="0" onAdd={sumarAlCarrito} />
-     
-               </div>
-            )}
- </div>
+            <div className="precio">
+              <ItemCount stock={stock} initial="0" onAdd={sumarAlCarrito} />
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
