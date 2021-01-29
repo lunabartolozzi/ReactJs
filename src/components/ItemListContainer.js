@@ -1,36 +1,48 @@
-import React, { useState, useEffect } from 'react';
-import ItemList from './ItemList';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import ItemList from "./ItemList";
+import { firestore } from "../firebaseConfig";
+import { useParams } from "react-router-dom";
 
-function ItemListContainer({ data }) {
-    const [articulos, setArticulos] = useState([]);
-    const { category } = useParams();
-    useEffect(() => {
-        if (category) {
-            const productosFiltrados = data.filter(
-                (articulo) => articulo.categoryID === category
-            );
-            setArticulos(productosFiltrados);
-        } else {
-            setArticulos(data);
-
-        }
-    }, [category, data])
-    return (
-        <div>
-            {
-                category ? (
-                    <h3>Resultado de busqueda..</h3>
-                ) : (
-                    <> </>    
-                )}
-      <div className="item-list">
-     <ItemList articulos={articulos} /> 
-
-      </div>
-            </div>
-    )
+function ItemListContainer() {
+  const { category } = useParams();
+  const [articulos, setArticulos] = useState([]);
   
-};
+  useEffect(() => {
+    obtenerArticulos.then((resultado) => {
+      if (category) {
+        const productosFiltrados = resultado.filter(
+          (articulos) => articulos.categoryId === category
+        );
+        setArticulos(productosFiltrados);
+      } else {
+        setArticulos(resultado);
+      }
+    });
+  }, [category]);
+  const obtenerArticulos = new Promise((resolve, reject) => {
+    const db = firestore;
+    const collection = db.collection("articulos");
+    const query = collection.get();
+    query
+    .then((result) => {
+      const collectionItems = result.docs.map((art) => ({
+        id: art.id,
+        ...art.data(),
+      }));
+        resolve(collectionItems);
+      })
+      .catch((error) => {
+          reject(error);
+      });
+  });
+  return (
+    <div>
+      {category ? <h3>Resultado de busqueda..</h3> : <> </>}
+      <div className="item-list">
+        <ItemList articulos={articulos} />
+      </div>
+    </div>
+  );
+}
 
 export default ItemListContainer;

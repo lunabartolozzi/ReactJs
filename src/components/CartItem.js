@@ -26,8 +26,7 @@ function CartItem({ articulo }) {
                     <img
                       src={articulo.item.pictureUrl}
                       alt="imagen"
-                      className="img-responsive"
-                    />
+                      className="img-responsive"/>
                   </div>
                   <div className="col-sm-10">
                     <h4 className="nomargin">{articulo.item.title}</h4>
