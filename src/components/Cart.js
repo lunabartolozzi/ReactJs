@@ -5,7 +5,7 @@ import CartItem from "./CartItem";
 import { useContext } from "react";
 
 function Cart() {
-  const { carrito,  clear, CartQuantity, CartPrice } = useContext(CartContext);
+  const { articulo,  clear, CartQuantity, CartPrice } = useContext(CartContext);
   return (
     <div>
       {CartQuantity() > 0 ? (
@@ -21,8 +21,8 @@ function Cart() {
               </tr>
             </thead>
             <tbody>
-              {carrito.map((item) => (
-                <CartItem item={item} />
+              {articulo.map((articulos) => (
+                <CartItem articulos={articulos} />
               ))}
             </tbody>
           </table>
@@ -56,7 +56,7 @@ function Cart() {
           </tfoot>
         </div>
       ) : (
-        <p>No hay productos! </p>
+        <p>No hay articulo! </p>
       )}
     </div>
   );

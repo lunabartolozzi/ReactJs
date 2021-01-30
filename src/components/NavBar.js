@@ -6,7 +6,7 @@ import{CartContext} from "./CartContext"
 
 
 function Navbar() {
-  const {CartQuantity} = useContext(CartContext)
+  const { CartQuantity } = useContext(CartContext)
   const [dropdown, setDropdown] = useState(false);
   const abrirCerrarDropdown = () => {
     setDropdown(!dropdown);

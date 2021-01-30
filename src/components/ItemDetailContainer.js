@@ -3,22 +3,29 @@ import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import { firestore } from "../firebaseConfig";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({articulos}) => {
   const [detalles, setDetalles] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    const db = firestore;
-    const itemCollection = db.collection("articulos");
-    const articulos = itemCollection.where("id", "==", id);
+    if(id){
+        const db = firestore
+        const collection = db.collection('articulos')
+        const query = collection.where('categoryId',"==",id).get()
+        query
+        .then((result) => {
+            setDetalles(result.docs.map(art=> ({id: art.id, ...art.data()})))
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+    }
+    else{
+        setDetalles(articulos)
+    }     
 
-    articulos.get().then((result) => {
-      if (result.docs[0].data() === undefined) {
-      } else {
-        setDetalles({ id: result.docs[0].id, ...result.docs[0].data() });
-      }
-    });
-  }, [id]);
+}, [id, articulos])
+
 
   return (
     <div className="itemDetailContainer">
