@@ -29,9 +29,9 @@ function CartProvider({ children }) {
       const carritoFiltrado = carrito.filter(
         (articulo) => articulo.item.id !== productoAAgregar.item.id
       );
-      itemEnCarrito.cantidadSeleccionada =
-        itemEnCarrito.cantidadSeleccionada +
-        productoAAgregar.cantidadSeleccionada;
+      itemEnCarrito.cantidad =
+        itemEnCarrito.cantidad +
+        productoAAgregar.cantidad;
 
       setCarrito([...carritoFiltrado, itemEnCarrito]);
     } else {
