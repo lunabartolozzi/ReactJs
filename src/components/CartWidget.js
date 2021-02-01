@@ -5,14 +5,14 @@ import "./cart.css";
 
 
 
-const CartWidget = ({cantidadSeleccionada}) => {
+const CartWidget = ({cantidad}) => {
     return (
         <div>
            
                    
             <Link to="/cart">
                 <img className="carrito" src={Carrito} alt="carrito" />
-              <p  className="number-cart"> {cantidadSeleccionada}</p> 
+              <p  className="number-cart"> {cantidad}</p> 
             </Link>
                 
       </div>
