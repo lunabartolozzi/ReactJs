@@ -7,16 +7,16 @@ function CartProvider({ children }) {
 
   function CartPrice() {
     var totalCosto = 0;
-
-    const totalesProducto = carrito.map((art) => art.item.price * art.item.cantidadSeleccionada ) 
+    const totalesProducto = carrito.map((art) => art.item.price * art.cantidad ) 
     
 
     totalesProducto.map((precioItem) => (totalCosto = totalCosto + precioItem));
     return totalCosto;
   }
   function CartQuantity() {
+    
     return carrito.reduce(
-      (acumulador, item) => acumulador + item.cantidadSeleccionada,
+      (acumulador, articulo) => acumulador + articulo.cantidad,
       0
     );
   }
@@ -62,7 +62,7 @@ function CartProvider({ children }) {
   return (
     <>
       <CartContext.Provider
-        value={{ carrito, addItem, removeItem, clear, CartPrice, CartQuantity }}
+        value={{ carrito, addItem, removeItem, clear, CartPrice, CartQuantity}}
       >
         {children}
       </CartContext.Provider>

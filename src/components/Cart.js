@@ -5,7 +5,7 @@ import CartItem from "./CartItem";
 import { useContext } from "react";
 
 function Cart() {
-  const { articulo,  clear, CartQuantity, CartPrice } = useContext(CartContext);
+  const { carrito,  clear, CartQuantity, CartPrice } = useContext(CartContext);
   return (
     <div>
       {CartQuantity() > 0 ? (
@@ -21,7 +21,7 @@ function Cart() {
               </tr>
             </thead>
             <tbody>
-              {articulo.map((articulo) => (
+              {carrito.map((articulo) => (
                 <CartItem articulo={articulo} />
               ))}
             </tbody>
@@ -45,7 +45,7 @@ function Cart() {
               </td>
               <td colspan="2" className="hidden-xs"></td>
               <td className="hidden-xs text-center">
-                <strong className="total">Total: ${CartPrice}</strong>
+                <strong className="total">Total: ${CartPrice()}</strong>
               </td>
               <td>
                 <Link to="/" className="btn btn-success btn-block">
@@ -56,7 +56,9 @@ function Cart() {
           </tfoot>
         </div>
       ) : (
-        <p>No hay articulo! </p>
+          <div>
+            <p>No hay articulo! </p>
+            </div>
       )}
     </div>
   );

@@ -35,9 +35,9 @@ function CartItem({ articulo }) {
                 </div>
               </td>
               <td data-th="Price">  ${articulo.item.price} </td>
-              <td data-th="Quantity">{articulo.cantidadSeleccionada}</td>
+              <td data-th="Quantity">{articulo.cantidad}</td>
               <td data-th="Subtotal" className="text-center">
-                <p>${articulo.item.price*articulo.cantidadSeleccionada}</p>
+                <p>${articulo.item.price * articulo.cantidad}</p>
               </td>
               <td className="actions" data-th="">
                
