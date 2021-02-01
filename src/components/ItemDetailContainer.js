@@ -6,15 +6,19 @@ import { firestore } from "../firebaseConfig";
 const ItemDetailContainer = ({articulos}) => {
   const [detalles, setDetalles] = useState({});
   const { id } = useParams();
+  console.log('id: ', id)
 
   useEffect(() => {
     if(id){
         const db = firestore
         const collection = db.collection('articulos')
-        const query = collection.where('categoryId',"==",id).get()
+        console.dir(collection)
+        const query = collection.doc(id).get()
         query
         .then((result) => {
-            setDetalles(result.docs.map(art=> ({id: art.id, ...art.data()})))
+          console.log(result.id)
+          console.log(result.data())
+            setDetalles({id: result.id, ...result.data()})
           })
           .catch((error) => {
             console.log(error)
