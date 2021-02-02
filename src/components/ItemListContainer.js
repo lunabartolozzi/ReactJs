@@ -18,7 +18,7 @@ function ItemListContainer() {
         setArticulos(resultado);
       }
     });
-  }, []);
+  }, [category]);
   const obtenerArticulos = new Promise((resolve, reject) => {
     const db = firestore;
     const collection = db.collection("articulos");
@@ -38,13 +38,13 @@ function ItemListContainer() {
   return (
     <div>
       {category ? (
-        <h3>Resultado de busqueda..</h3>
+        <h3>Resultado de busqueda... {category}  </h3>
       ) : (
           <> </>
         )}
-      <div className="item-list">
+   
         <ItemList articulos={articulos} />
-      </div>
+     
     </div>
   );
 }

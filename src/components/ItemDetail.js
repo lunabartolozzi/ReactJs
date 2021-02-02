@@ -6,7 +6,7 @@ import { CartContext } from "./CartContext";
 
 
 function ItemDetail({ item }) {
-  console.dir(item)
+
   const { addItem } = useContext(CartContext);
 
   const [stock, setStock] = useState(5);

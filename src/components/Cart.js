@@ -48,7 +48,7 @@ function Cart() {
                 <strong className="total">Total: ${CartPrice()}</strong>
               </td>
               <td>
-                <Link to="/" className="btn btn-success btn-block">
+                <Link to="/firebase" className="btn btn-success btn-block">
                   Pagar <i className="fa fa-angle-right"></i>
                 </Link>
               </td>

@@ -9,7 +9,7 @@ import Inicio from "./components/Inicio";
 import Contacto from "./components/Contacto";
 import CartProvider from "./components/CartContext";
 import Cart from "./components/Cart";
-
+import Firebase from "./components/Firebase";
 
 function App() {
   return (
@@ -17,8 +17,10 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <Navbar />
-
           <Switch>
+            <Route exact path="/firebase">
+              <Firebase/>
+            </Route>
             <Route exact path="/">
               <Inicio />
               <ItemListContainer/>
