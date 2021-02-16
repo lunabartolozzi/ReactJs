@@ -1,6 +1,7 @@
 /* Item descriptivo del producto */
 import React from "react";
 import { Link } from 'react-router-dom';
+import "../estilo.css";
 
 const Item = ({ item }) => {
   const { id, title, info, price, pictureUrl } = item;

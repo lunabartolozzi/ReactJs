@@ -10,20 +10,25 @@ import Contacto from "./components/Contacto";
 import CartProvider from "./components/CartContext";
 import Cart from "./components/Cart";
 import Firebase from "./components/Firebase";
+import Item from "./components/Item";
 
 function App() {
   return (
     <>
       <CartProvider>
         <BrowserRouter>
-          <Navbar />
+        <Navbar />
+        <Route exact path="/ItemListContainer">
+            <ItemListContainer />
+          </Route>
+        
           <Switch>
             <Route exact path="/firebase">
               <Firebase/>
             </Route>
             <Route exact path="/">
               <Inicio />
-              <ItemListContainer/>
+           
             </Route>
             <Route exact path="/category/:category">
               <ItemListContainer/>

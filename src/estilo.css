@@ -3,10 +3,10 @@
     align-items: center;
     height: 4rem;
     font-size: 1.3rem;
-    background: lightblue;
+    background: rgb(225, 149, 9);
     color: white;
     font-weight: 500;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+ 
 }
 
 .navbar-logo {
@@ -119,7 +119,8 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #def2fc;
     border: solid white;
     border-radius: 0.2rem;
-}/* #FFDAB9 */
+}
+
 
 .grid-list{
     display: grid;
@@ -128,6 +129,10 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
  grid-row-gap: 17rem;
   
+}
+.card-button{
+    display: grid;
+    grid-template-rows: 16% 16% 16% 16% 16% 16%;
 }
 /* ---------------contador------------ */
 

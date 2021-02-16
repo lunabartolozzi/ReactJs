@@ -11,7 +11,7 @@ function Cart() {
       {CartQuantity() > 0 ? (
         <div>
           <table id="cart" className="table table-hover table-condensed">
-            <thead>
+            <thead className="category-cart">
               <tr>
                 <th className="category-1">Producto</th>
                 <th className="category-2">Precio</th>
@@ -56,9 +56,9 @@ function Cart() {
           </tfoot>
         </div>
       ) : (
-          <div>
-            <p>No hay articulo! </p>
-            </div>
+        <div>
+          <p>No hay articulo! </p>
+        </div>
       )}
     </div>
   );

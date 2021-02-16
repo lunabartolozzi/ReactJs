@@ -15,7 +15,7 @@ function Navbar() {
     <>
       <header className="navbar">
         <Link to="/" className="navbar-logo">
-          Store
+         Ría Libre
          </Link>
           <Link to="/" className="navbar-item">
             Inicio</Link>
@@ -27,10 +27,11 @@ function Navbar() {
           </Link> 
           </DropdownToggle>
           <DropdownMenu>
-        
+          <DropdownItem> <Link className="option-dropdown" to="/ItemListContainer"> Todos los productos</Link></DropdownItem>
+         
     
             <DropdownItem divider />
-             {/* Bootstrap del navbar deseado */}
+         
           <DropdownItem> <Link className="option-dropdown" to="/category/Cuadernos"> Cuadernos - Carpetas</Link></DropdownItem>
                 <DropdownItem divider/>
             <DropdownItem> <Link className="option-dropdown" to="/category/Resaltadores"> Utiles y resaltadores</Link></DropdownItem>

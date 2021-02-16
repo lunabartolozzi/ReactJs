@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+ --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --darkblue: hsl(234, 12%, 34%);
+  --grey: hsl(229, 6%, 66%);
+  --lightgrey: hsl(0, 0%, 98%);
+  --lightpink:hsl(351, 100%, 86%);
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  
+}
+p {
+    color: var(--black) !important;
+}
+
+h1 span {
+  display: block;
+  font-weight: 200;
+}
+
+p {
+  color: var(--grey);
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1250px;
+  margin: 50px auto;
+}
+
+.box {
+  border-radius: 8px;
+  background-color: #fff;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem;
+  margin: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06), 0 6px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.box:before {
+  content: '';
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+}
+
+.box.box-vert-center {
+  transform: translateY(50%);
+}
+
+.box p {
+  padding-top: 0.75rem;
+  font-size: 0.85rem;
+}
+.img{
+    width:3rem ;
+height: 3rem;
+
+}
+.button{
+    color: white;
+    background-color: orange;
+    border: solid 1px rgb(255, 193, 79);
+    border-radius: 1rem;
+    margin-top: -2rem;
+    width: 10rem;
+    margin-left: 7rem;
+}
+.style-link{
+    text-decoration: none;
+    color: white;
+}
+.style-link:hover{
+text-decoration: none;
+color: white;
+font-size: 1.2rem;
+
+}
+
+
+
+
+.box:nth-of-type(1):before {
+  background-color: var(--cyan);
+}
+
+.box:nth-of-type(2):before {
+    background-color: var(--lightpink);
+}
+
+.box:nth-of-type(3):before {
+  background-color: var(--blue);
+}
+
+.box:nth-of-type(4):before {
+  background-color: var(--pink);
+}
+
+@media (max-width: 850px) {
+  .box.box-vert-center {
+    transform: translateY(0);
+  }
+}
